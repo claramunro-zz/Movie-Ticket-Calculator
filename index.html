@@ -1,68 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet" type="text/css">
-        <script src="js/jquery-3.3.1.js"></script>
-        <script src="js/scripts.js"></script>
-        <title>Address Book</title>
-    </head>
+
+<head>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Movie Tickets</title>
+</head>
+
 <body>
     <div class="container">
-        <h1>Address Book</h1>
+        <h1>Movie Tickets</h1>
         <div class="row">
-            <div class="col-md-6">
-                <hr>
-                <h2>Add a Contact:</h2>
-                <form id="new-contact">
-                    <div class="form-group">
-                        <label for="new-first-name">First Name</label>
-                        <input type="text" class="form-control" id="new-first-name">
+            <div class="col-md-12">
+                <form id="tickets">
+                    <div class="movies">
+                        <label>
+                            <input type="radio" name="movie" value="pokemonOne"> Pokemon One
+                        </label>
+                        <label>
+                            <input type="radio" name="movie" value="pokemonTwo"> Pokemon Two
+                        </label>
+                        <label>
+                            <input type="radio" name="movie" value="pokemonIMAX"> Pokemon IMAX
+                        </label>
                     </div>
-                    <div class="form-group">
-                        <label for="new-last-name">Last Name</label>
-                        <input type="text" class="form-control" id="new-last-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="new-phone-number">Phone Number</label>
-                        <input type="text" class="form-control" id="new-phone-number">
-                    </div>
-                    <!-- <div class="form-group">
-                        <label for="new-email-address">Email Address</label>
-                        <input type="text" class="form-control" id="new-email-address">
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" class="form-control" id="new-address">
-                    </div> -->
-                    <button type="submit" class="btn-primary">Add</button>
-                </form>
-                <hr>
-                <h2>Contacts:</h2>
-                <ul id="contacts">
-                </ul>
             </div>
-            <div class="col-md-6">
-                <div id="show-contact">
-                    <p>First Name: <span class="first-name"></span></p>
-                    <p>Last Name: <span class="last-name"></span></p>
-                    <p>Phone Number: <span class="phone-number"></span></p>
-                    <form id="addressForm">
-                        <div class="form-group">
-                            <label for="new-email-address">Email Address</label>
-                            <input type="text" class="form-control" id="new-email-address">
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Address</label>
-                            <input type="text" class="form-control" id="new-address">
-                        </div>
-                        <button id="addAddress">Add Addresses</button>
-                    </form>
-                    <div id="buttons">
-                    </div>
+            <div class="col-md-12">
+                <div class="time">
+                    <label>
+                        <input type="radio" name="time" value="am"> AM
+                    </label>
+                    <label>
+                        <input type="radio" name="time" value="pm"> PM
+                    </label>
                 </div>
             </div>
+            <div class="col-md-12">
+                <div class="age">
+                    <label>
+                        <input type="radio" name="age" value="under18"> Under 18
+                    </label>
+                    <label>
+                        <input type="radio" name="age" value="over18"> Over 18
+                    </label>
+                    <label>
+                        <input type="radio" name="age" value="over55"> Over 55 (Senior Discount)
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-info btn-sm">Show Price</button>
+            </form>
+        </div>
+
+        <div id="priceOne">
+            <h3>$10</h3>
+        </div>
+        <div id="priceTwo">
+            <h3>$15</h3>
+        </div>
+        <div id="priceThree">
+            <h3>$20</h3>
+        </div>
+        <div id="priceThree">
+                <h3>$20</h3>
+        </div>
+        <div id="priceFour">
+            <h3>$10,000 (comes with a free pikachu plushy!)</h3>
+            <img src="img/pikachu.png">
         </div>
     </div>
 </body>
+
 </html>
