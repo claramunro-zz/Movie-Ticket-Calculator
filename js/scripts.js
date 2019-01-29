@@ -9,6 +9,10 @@ AddressBook.prototype.addContact = function(contact) {
   this.contacts.push(contact);
 }
 
+Contact.prototype.addAddress = function(address) {
+  this.addresses.push(address);
+}
+
 AddressBook.prototype.assignId = function() {
   this.currentId += 1;
   return this.currentId;
@@ -37,12 +41,21 @@ AddressBook.prototype.deleteContact = function(id) {
   return false;
 }
 
+
+
 // Business logic for Contacts
 function Contact(firstName, lastName, phoneNumber) {
   this.firstName = firstName,
   this.lastName = lastName,
-  this.phoneNumber = phoneNumber
-}
+  this.phoneNumber = phoneNumber,
+  this.addresses = [];
+  console.log(this.addresses)
+  }
+
+  function Address(email, address) {
+    this.email = email,
+    this.address = address
+  }
 
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
@@ -69,11 +82,12 @@ function showContact(contactId) {
   $(".phone-number").html(contact.phoneNumber);
   var buttons = $("#buttons");
   buttons.empty();
-  buttons.append("<button class='deleteButton' id=" + + contact.id + ">Delete</button>");
+  buttons.append("<button class='deleteButton' id=" + + contact.id + ">Delete Contact</button>");
 }
 
 function attachContactListeners() {
   $("ul#contacts").on("click", "li", function() {
+    console.log("The id of this <li> is " + this.id + ".");
     showContact(this.id);
   });
   $("#buttons").on("click", ".deleteButton", function () {
@@ -98,5 +112,14 @@ $(document).ready(function () {
     addressBook.addContact(newContact);
     displayContactDetails(addressBook);
     console.log(addressBook.contacts);
+  });
+  $("form#addressForm").submit(function(event) {
+    event.preventDefault();
+    var inputtedEmail = $("input#new-email-address").val();
+    var inputtedAddress = $("input#new-address").val();
+    var newAddress = new Address(inputtedEmail, inputtedAddress);
+    addresses.addAddress(newAddress);
+    displayContactDetails(addressBook);
+    console.log(added);
   });
 });
